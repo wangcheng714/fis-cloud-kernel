@@ -1,24 +1,15 @@
 var fis = require("./../fis-cloud-kernel.js");
 
-fis.db.insert("user", null, {_id:'wangcheng', email:'wangcheng@baidu.com', group:'fis'}, {}, function(err, result){
 
-    if(err){
-        console.log(err);
-    }else{
-        console.log(1);
-        console.log(result);
-    }
-});
+//fis.db.insert("user", "wangcheng", {_id:"wangcheng", email:"wangcheng@baidu.com"}, {}, function(err, result){
+//    console.log(result);
+//});
 
+//fis.db.find("user", "wangcheng", {}, {}, {}, function(err, result){
+//    result.toArray(function(err, users){
+//        //console.log(users);
+//        console.log(users[0]);
+//        console.log(users[1]);
+//    });
+//});
 
-
-fis.db.find("user", "wangcheng", {}, {}, {}, function(err, result){
-    if(err){
-        console.log(err);
-    }else{
-        result.each(function(err, user){
-            console.log("find");
-            console.log(user);
-        });
-    }
-});
