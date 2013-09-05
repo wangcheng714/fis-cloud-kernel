@@ -5,7 +5,7 @@ var fis = require("./../fis-cloud-kernel.js"),
 //    password = '890714',
 //    _auth = Base64.encode((name + password).toString());
 //
-//fis.db.insert('user', {}, {_id : name, username : name, password : password, _auth : _auth}, {} , function(err, result){
+//fis.db.insert('user', name, {_id : name, name : name, password : password, _auth : _auth}, {} , function(err, result){
 //    console.log(result);
 //});
 //
@@ -13,28 +13,21 @@ var fis = require("./../fis-cloud-kernel.js"),
 //password = '22222';
 //_auth = Base64.encode((name + password).toString());
 //
-//fis.db.insert('user', {}, {_id : name, username : name, password : password, _auth : _auth}, {} , function(err, result){
+//fis.db.insert('user', name, {_id : name, name : name, password : password, _auth : _auth}, {} , function(err, result){
 //    console.log(result);
 //});
 
-fis.db.findOne("user", "wangcheng", {username:"wangcheng"}, function(err, result){
+fis.db.findOne("user", "zhangsan", {name : "zhangsan"}, function(err, result){
     if(!err){
-        console.log(result);
+        result.password = "325435";
+        fis.db.update("user", "zhangsan", {name : "zhangsan"}, result, {}, function(error, result){
+            console.log(error);
+            console.log(result);
+        });
     }else{
         console.log("error" + err);
     }
 
 });
 
-//fis.db.find("user", "", {}, {}, {}, function(err, result){
-//    if(!err){
-//        result.toArray(function(err, users){
-//            //console.log(users);
-//            console.log(users[0]);
-//            console.log(users[1]);
-//        });
-//    }else{
-//        console.log(err);
-//    }
-//});
 
