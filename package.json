@@ -9,8 +9,7 @@
     "mongoskin" : "0.6.0",
     "fis-cloud-app-static" : "0.0.2",
     "q" : "0.9.6",
-    "iconv-lite" : "0.2.11",
-    "js-base64" : "2.1.2"
+    "iconv-lite" : "0.2.11"
   },
   "devDependencies": {},
   "scripts": {
