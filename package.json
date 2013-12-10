@@ -1,6 +1,6 @@
 {
   "name": "fis-cloud-kernel",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "fis-cloud-kernel",
   "main": "fis-cloud-kernel.js",
   "dependencies": {
