@@ -1,0 +1,28 @@
+
+方案一 ： 利用linux crontab实现
+
+    缺点 ：
+
+        1.  只能执行linux命令，需要将定时任务写到单独的js文件中，并且无法使用fis内置方法
+        2.  app卸载或者升级后以前的crontab无法找到以前的定时任务删除他们
+
+方案二 ： 利用node-cron模块实现
+
+    方案1 ： app向server注册定时执行任务
+
+        server启动时查询所有的app，调用app的init方法， init方法中可以注册定时任务
+
+        缺点 ： app升级时因为不会不会重新执行init函数，所以定时任务无法更新，只有server重启定时任务才能更新
+
+    方案2 ： server轮询所有的app查找定时任务
+
+        app中提供配置文件，指定定时任务，格式仿照linux crontab  http://linux.vbird.org/linux_basic/0430cron.php#whatiscron_type
+        server启动时扫描所有的app
+
+        固定每隔一个小时或者多长时间从新扫描一次所有的配置文件，更新全部的定时任务
+
+    缺点 ：
+
+        服务器down掉之后定时任务将不再执行
+
+最后结论 ： 采用方案二-2测试

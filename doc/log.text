@@ -1,0 +1,7 @@
+1. server启动时指定log目录，默认根目录下的log目录
+2. 每个app一个log子目录
+3. 提供notice、log、debug、error四种级别的log方法
+    所有方法都可以指定日志文件
+    默认每个级别的log记录到方法名对应的文件中
+
+
